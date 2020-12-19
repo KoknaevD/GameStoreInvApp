@@ -1,7 +1,8 @@
 package com.udacity.gamestore.login.data
 
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Patterns
-import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,37 +12,65 @@ data class LoginFormState(val usernameError: Int? = null,
                           val passwordError: Int? = null,
                           val isDataValid: Boolean = false)
 
-class LoginViewModel : ViewModel() {
+data class LoginResult(val username: String = "",
+                          val hasLoggedIn: Boolean = false)
+
+class LoginViewModel() : ViewModel() {
 
 
-    var username = ObservableField<String>()
-    var password = ObservableField<String>()
+    private var _username = ""
+    private var _password = ""
 
-                                                                          
+
+    private val _loginResult = MutableLiveData<LoginResult>()
+    val loginResult : LiveData<LoginResult>
+        get() = _loginResult
 
     private val _loginFormState = MutableLiveData<LoginFormState>()
     val loginFormState : LiveData<LoginFormState>
         get() = _loginFormState
 
-    private val _eventLoginFinish = MutableLiveData<Boolean>()
-    val eventLoginFinish : LiveData<Boolean>
-        get() = _eventLoginFinish
-
     fun login(){
-        _eventLoginFinish.value = true
+        _loginResult.value = LoginResult(_username, true)
     }
 
-    fun onLoginComplete() {
-        _eventLoginFinish.value = false
+    fun usernameTextWatcher() : TextWatcher {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // ignore
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                // ignore
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                _username = s.toString()
+                loginDataChanged()
+            }
+        }
+    }
+    fun passwordTextWatcher() : TextWatcher {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // ignore
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                // ignore
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                _password = s.toString()
+                loginDataChanged()
+            }
+        }
     }
 
     fun loginDataChanged() {
-        val mUser: String = username.get() ?: ""
-        val mPass: String = password.get() ?: ""
-
-        if (!isUserNameValid(mUser)) {
+        if (!isUserNameValid(_username)) {
             _loginFormState.value = LoginFormState(usernameError = R.string.invalid_username)
-        } else if (!isPasswordValid(mPass)) {
+        } else if (!isPasswordValid(_password)) {
             _loginFormState.value = LoginFormState(passwordError = R.string.invalid_password)
         } else {
             _loginFormState.value = LoginFormState(isDataValid = true)

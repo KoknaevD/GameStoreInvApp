@@ -29,10 +29,11 @@
             android:hint="@string/prompt_email"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
-            android:text="@={loginViewModel.username}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:addTextChangedListener="@{loginViewModel.usernameTextWatcher}"
+            />
 
         <EditText
             android:id="@+id/password"
@@ -46,10 +47,11 @@
             android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:selectAllOnFocus="true"
-            android:text="@={loginViewModel.password}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username" />
+            app:layout_constraintTop_toBottomOf="@+id/username"
+            app:addTextChangedListener="@{loginViewModel.passwordTextWatcher}"
+            />
 
         <Button
             android:id="@+id/login"
