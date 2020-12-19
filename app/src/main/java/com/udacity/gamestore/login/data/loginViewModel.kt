@@ -26,12 +26,17 @@ class LoginViewModel() : ViewModel() {
     val loginResult : LiveData<LoginResult>
         get() = _loginResult
 
+
     private val _loginFormState = MutableLiveData<LoginFormState>()
     val loginFormState : LiveData<LoginFormState>
         get() = _loginFormState
 
     fun login(){
         _loginResult.value = LoginResult(_username, true)
+    }
+
+    fun onLoginFinishComplete(){
+        _loginResult.value = LoginResult("", false)
     }
 
     fun usernameTextWatcher() : TextWatcher {

@@ -34,6 +34,7 @@ class LoginFragment : Fragment() {
         viewModel.loginResult.observe(viewLifecycleOwner, Observer { loginResult ->
             if (loginResult.hasLoggedIn) {
                 loginFinished(loginResult.username)
+                viewModel.onLoginFinishComplete()
             }
         })
 
