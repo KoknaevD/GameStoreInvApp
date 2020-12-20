@@ -9,6 +9,12 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_text1">welcome text 1</string>
+    <string name="welcome_text_2">welcome text 2</string>
+    <string name="welcome_next_button">Next</string>
+    <string name="Intstruction_text_1">Instruction text 1</string>
+    <string name="Instruction_text_2">Instruction text 2</string>
+    <string name="Instruction_button_next">Agree</string>
+
+
 </resources>
