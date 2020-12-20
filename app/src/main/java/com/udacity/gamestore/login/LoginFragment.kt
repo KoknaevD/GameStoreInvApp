@@ -1,4 +1,4 @@
-package com.udacity.gamestore.login.ui
+package com.udacity.gamestore.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import com.udacity.gamestore.ActivityViewModel
 import com.udacity.gamestore.R
 import com.udacity.gamestore.databinding.FragmentLoginBinding
-import com.udacity.gamestore.login.data.LoginViewModel
 
 class LoginFragment : Fragment() {
 
@@ -57,8 +57,13 @@ class LoginFragment : Fragment() {
 
 
     private fun loginFinished(username: String) {
+        binding.username.text.clear()
+        binding.password.text.clear()
         val model: ActivityViewModel by activityViewModels()
         model.login(username)
+        val action =
+            LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
+        NavHostFragment.findNavController(this).navigate(action)
     }
 
 }

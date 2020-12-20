@@ -6,7 +6,7 @@
     <data>
         <variable
             name="loginViewModel"
-            type="com.udacity.gamestore.login.data.LoginViewModel" />
+            type="com.udacity.gamestore.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +17,7 @@
         android:paddingTop="@dimen/fragment_vertical_margin"
         android:paddingRight="@dimen/fragment_horizontal_margin"
         android:paddingBottom="@dimen/fragment_vertical_margin"
-        tools:context=".login.ui.LoginFragment">
+        tools:context=".login.LoginFragment">
 
         <EditText
             android:id="@+id/username"

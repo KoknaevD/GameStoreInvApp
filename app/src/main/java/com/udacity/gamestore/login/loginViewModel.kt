@@ -1,4 +1,4 @@
-package com.udacity.gamestore.login.data
+package com.udacity.gamestore.login
 
 import android.text.Editable
 import android.text.TextWatcher
@@ -32,7 +32,8 @@ class LoginViewModel() : ViewModel() {
         get() = _loginFormState
 
     fun login(){
-        _loginResult.value = LoginResult(_username, true)
+        _loginResult.value =
+            LoginResult(_username, true)
     }
 
     fun onLoginFinishComplete(){
@@ -74,11 +75,14 @@ class LoginViewModel() : ViewModel() {
 
     fun loginDataChanged() {
         if (!isUserNameValid(_username)) {
-            _loginFormState.value = LoginFormState(usernameError = R.string.invalid_username)
+            _loginFormState.value =
+                LoginFormState(usernameError = R.string.invalid_username)
         } else if (!isPasswordValid(_password)) {
-            _loginFormState.value = LoginFormState(passwordError = R.string.invalid_password)
+            _loginFormState.value =
+                LoginFormState(passwordError = R.string.invalid_password)
         } else {
-            _loginFormState.value = LoginFormState(isDataValid = true)
+            _loginFormState.value =
+                LoginFormState(isDataValid = true)
         }
     }
 
