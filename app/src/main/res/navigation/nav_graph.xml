@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameListFragment"
-        android:name="com.udacity.gamestore.games.GameListFragment"
+        android:name="com.udacity.gamestore.games.GamesListFragment"
         android:label="fragment_game_list"
-        tools:layout="@layout/fragment_game_list" />
+        tools:layout="@layout/fragment_games_list" />
 </navigation>

@@ -57,13 +57,13 @@ class LoginFragment : Fragment() {
 
 
     private fun loginFinished(username: String) {
-        binding.username.text.clear()
-        binding.password.text.clear()
         val model: ActivityViewModel by activityViewModels()
         model.login(username)
         val action =
             LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
         NavHostFragment.findNavController(this).navigate(action)
+        binding.username.text.clear()
+        binding.password.text.clear()
     }
 
 }
