@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -26,6 +27,12 @@
     <style name="onBoardingButton">
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="gamelist_text">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:padding">@dimen/small_padding</item>
     </style>
 
 </resources>

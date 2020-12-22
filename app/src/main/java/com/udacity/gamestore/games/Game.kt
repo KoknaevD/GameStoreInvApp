@@ -5,4 +5,4 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Game(var name: String, var price: Double, var company: String, var description: String,
-                val images: List<String> = mutableListOf()) : Parcelable
+                val images: List<Int> = mutableListOf(), var imageId: Int = 0) : Parcelable

@@ -3,4 +3,6 @@
     <dimen name="fragment_horizontal_margin">16dp</dimen>
     <dimen name="fragment_vertical_margin">16dp</dimen>
     <dimen name="fragment_margin">16dp</dimen>
+    <dimen name="margin_half">4dp</dimen>
+    <dimen name="small_padding">2dp</dimen>
 </resources>
