@@ -8,12 +8,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.gamestore.R
 
-data class LoginFormState(val usernameError: Int? = null,
-                          val passwordError: Int? = null,
-                          val isDataValid: Boolean = false)
+data class LoginFormState(
+    val usernameError: Int? = null,
+    val passwordError: Int? = null,
+    val isDataValid: Boolean = false
+)
 
-data class LoginResult(val username: String = "",
-                          val hasLoggedIn: Boolean = false)
+data class LoginResult(
+    val username: String = "",
+    val hasLoggedIn: Boolean = false
+)
 
 class LoginViewModel() : ViewModel() {
 
@@ -23,24 +27,24 @@ class LoginViewModel() : ViewModel() {
 
 
     private val _loginResult = MutableLiveData<LoginResult>()
-    val loginResult : LiveData<LoginResult>
+    val loginResult: LiveData<LoginResult>
         get() = _loginResult
 
 
     private val _loginFormState = MutableLiveData<LoginFormState>()
-    val loginFormState : LiveData<LoginFormState>
+    val loginFormState: LiveData<LoginFormState>
         get() = _loginFormState
 
-    fun login(){
+    fun login() {
         _loginResult.value =
             LoginResult(_username, true)
     }
 
-    fun onLoginFinishComplete(){
+    fun onLoginFinishComplete() {
         _loginResult.value = LoginResult("", false)
     }
 
-    fun usernameTextWatcher() : TextWatcher {
+    fun usernameTextWatcher(): TextWatcher {
         return object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
                 // ignore
@@ -56,7 +60,8 @@ class LoginViewModel() : ViewModel() {
             }
         }
     }
-    fun passwordTextWatcher() : TextWatcher {
+
+    fun passwordTextWatcher(): TextWatcher {
         return object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
                 // ignore

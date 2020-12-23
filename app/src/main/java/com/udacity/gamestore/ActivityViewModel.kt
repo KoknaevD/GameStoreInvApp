@@ -14,10 +14,10 @@ class ActivityViewModel : ViewModel() {
     private lateinit var _username: String
 
     private val _isLoggedIn = MutableLiveData<Boolean>()
-    val isLoggedIn : LiveData<Boolean>
+    val isLoggedIn: LiveData<Boolean>
         get() = _isLoggedIn
 
-    fun login(username: String){
+    fun login(username: String) {
         Log.i("test", "ActivityViewModel login $username")
         _username = username
         _isLoggedIn.value = true

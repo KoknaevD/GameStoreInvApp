@@ -12,12 +12,15 @@ import com.udacity.gamestore.databinding.FragmentWelcomeBinding
 
 
 class WelcomeFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         val binding: FragmentWelcomeBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_welcome, container, false)
+            R.layout.fragment_welcome, container, false
+        )
 
         binding.nextButton.setOnClickListener {
             val action =

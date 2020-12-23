@@ -55,7 +55,6 @@ class LoginFragment : Fragment() {
     }
 
 
-
     private fun loginFinished(username: String) {
         val model: ActivityViewModel by activityViewModels()
         model.login(username)

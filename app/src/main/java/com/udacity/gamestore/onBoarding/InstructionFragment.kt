@@ -11,15 +11,19 @@ import com.udacity.gamestore.R
 import com.udacity.gamestore.databinding.FragmentInstructionBinding
 
 class InstructionFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         val binding: FragmentInstructionBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_instruction, container, false)
+            R.layout.fragment_instruction, container, false
+        )
 
         binding.nextButton.setOnClickListener {
-            val action = InstructionFragmentDirections.actionInstructionFragmentToGameListFragment()
+            val action =
+                InstructionFragmentDirections.actionInstructionFragmentToGamesListFragment()
             NavHostFragment.findNavController(this).navigate(action)
         }
         return binding.root

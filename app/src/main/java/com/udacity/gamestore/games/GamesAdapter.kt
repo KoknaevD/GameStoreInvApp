@@ -9,7 +9,7 @@ import com.udacity.gamestore.databinding.RecyclerviewGameBinding
 
 
 class GamesAdapter(
-    private val games: Array<Game>
+    private val games: MutableList<Game>
 ) : RecyclerView.Adapter<GamesAdapter.GamesViewHolder>() {
 
 
@@ -17,7 +17,8 @@ class GamesAdapter(
         return games.size
     }
 
-    inner class GamesViewHolder(val recyclerviewGameBinding: RecyclerviewGameBinding) : RecyclerView.ViewHolder(recyclerviewGameBinding.root) {
+    inner class GamesViewHolder(val recyclerviewGameBinding: RecyclerviewGameBinding) :
+        RecyclerView.ViewHolder(recyclerviewGameBinding.root) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
