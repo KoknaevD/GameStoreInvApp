@@ -25,5 +25,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_new_game_text">Add new game</string>
     <string name="games_list">Games list</string>
+    <string name="save_button_text">SAVE</string>
+    <string name="cancel_button_text">CANCEL</string>
+    <string name="name_text">Name</string>
+    <string name="company_text">Company</string>
+    <string name="price_text">Price:</string>
+    <string name="description_text">Description:</string>
 
 </resources>
