@@ -35,4 +35,10 @@
         <item name="android:padding">@dimen/small_padding</item>
     </style>
 
+    <style name="detail_text">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
 </resources>

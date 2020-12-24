@@ -1,6 +1,8 @@
 package com.udacity.gamestore.games
 
 import android.util.Log
+import androidx.databinding.Observable
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,6 +13,13 @@ class GamesViewModel : ViewModel() {
     private val _games = MutableLiveData<MutableList<Game>>()
     val games: LiveData<MutableList<Game>>
         get() = _games
+
+
+    var newGame = getGame()
+
+    private fun getGame(): Game = Game("", 0.00, "","", mutableListOf(R.drawable.image_available_soon))
+
+
 
     init {
         Log.i("test", "GamesViewModel created")
@@ -76,21 +85,13 @@ class GamesViewModel : ViewModel() {
     }
 
     fun addNewGame(name: String, price: Double, company: String, description: String) {
-
-        _games.value?.add(
-            Game(
-                name,
-                price,
-                company,
-                description,
-                mutableListOf(R.drawable.image_available_soon)
-            )
-        )
-
+        _games.value?.add(newGame)
+        clear()
     }
 
+
     fun clear() {
-        _games.value?.clear()
+        newGame = getGame()
     }
 
 }

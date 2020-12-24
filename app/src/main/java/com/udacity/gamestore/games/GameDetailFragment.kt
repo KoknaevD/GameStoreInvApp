@@ -1,6 +1,7 @@
 package com.udacity.gamestore.games
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -24,16 +25,18 @@ class GameDetailFragment : Fragment() {
             R.layout.fragment_game_detail, container, false
         )
 
-
+        val viewModel: GamesViewModel by activityViewModels()
         binding.saveButton.setOnClickListener {
-            val viewModel: GamesViewModel by activityViewModels()
-            viewModel.addNewGame("test_name", 1337.00, "test_company", "test_description")
+            viewModel.addNewGame("newGame.name", 1337.00, "test_company", "test_description")
             this.findNavController().popBackStack()
         }
 
         binding.cancelButton.setOnClickListener {
+            viewModel.clear()
             this.findNavController().popBackStack()
         }
+
+        binding.viewModel = viewModel
 
         return binding.root
     }
