@@ -27,12 +27,14 @@ class GameDetailFragment : Fragment() {
 
         val viewModel: GamesViewModel by activityViewModels()
         binding.saveButton.setOnClickListener {
-            viewModel.addNewGame("newGame.name", 1337.00, "test_company", "test_description")
-            this.findNavController().popBackStack()
+            if (viewModel.isNewGameValid()) {
+                viewModel.addNewGame()
+                this.findNavController().popBackStack()
+            }
         }
 
         binding.cancelButton.setOnClickListener {
-            viewModel.clear()
+            viewModel.clearDetail()
             this.findNavController().popBackStack()
         }
 

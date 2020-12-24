@@ -1,8 +1,6 @@
 package com.udacity.gamestore.games
 
 import android.util.Log
-import androidx.databinding.Observable
-import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,14 +13,15 @@ class GamesViewModel : ViewModel() {
         get() = _games
 
 
-    var newGame = getGame()
+    lateinit var newGame: Game //i dont know how to do it without an open field with two way binding
 
-    private fun getGame(): Game = Game("", 0.00, "","", mutableListOf(R.drawable.image_available_soon))
-
-
+    private fun resetNewGame() {
+        newGame = Game("", 0.00, "", "", mutableListOf(R.drawable.image_available_soon))
+    }
 
     init {
         Log.i("test", "GamesViewModel created")
+        resetNewGame()
         _games.value = mutableListOf(
             Game(
                 "Diablo",
@@ -84,14 +83,18 @@ class GamesViewModel : ViewModel() {
         )
     }
 
-    fun addNewGame(name: String, price: Double, company: String, description: String) {
+    fun addNewGame() {
         _games.value?.add(newGame)
-        clear()
+        resetNewGame()
     }
 
 
-    fun clear() {
-        newGame = getGame()
+    fun clearDetail() {
+        resetNewGame()
     }
 
+
+    fun isNewGameValid(): Boolean {
+        return !(newGame.name.isEmpty() || newGame.company.isEmpty() || newGame.description.isEmpty() || newGame.price == 0.00)
+    }
 }
