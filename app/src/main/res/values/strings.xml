@@ -1,32 +1,34 @@
 <resources>
     <string name="app_name">GameStore</string>
+    <string name="logout_menu_text">Logout</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="welcome_text1">welcome text 1</string>
-    <string name="welcome_text_2">welcome text 2</string>
+
+    <!-- Strings related to onBoarding -->
+    <string name="welcome_text1">Welcome to the GameStore app</string>
+    <string name="welcome_text_2">Best game store app in the world</string>
     <string name="welcome_next_button">Next</string>
-    <string name="Intstruction_text_1">Instruction text 1</string>
-    <string name="Instruction_text_2">Instruction text 2</string>
-    <string name="Instruction_button_next">Agree</string>
+    <string name="intstruction_text_1">On the first screen is a list of games, which contains the name,
+    the developer company, description of the game,the price and game image</string>
+    <string name="instruction_text_2">To add a new game to the list, you need to click plus button
+        on the lower rigth corner, fill in all the fields in a new windows and press save button</string>
+    <string name="instruction_button_next">Agree</string>
+    <string name="instrictuon_name">Instruction</string>
 
 
-    <string name="logout_menu_text">Logout</string>
-
+    <!-- Strings related to detail screen -->
     <string name="price_format">%.2f RUB</string>
     <string name="fab_description">Add new game</string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_new_game_text">Add new game</string>
     <string name="games_list">Games list</string>
-    <string name="save_button_text">SAVE</string>
-    <string name="cancel_button_text">CANCEL</string>
+    <string name="save_button_text">Save</string>
+    <string name="cancel_button_text">Cancel</string>
     <string name="name_text">Name:</string>
     <string name="company_text">Company:</string>
     <string name="price_text">Price:</string>

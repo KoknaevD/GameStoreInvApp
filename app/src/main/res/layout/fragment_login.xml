@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="loginViewModel"
             type="com.udacity.gamestore.login.LoginViewModel" />
@@ -32,7 +33,8 @@
             app:addTextChangedListener="@{loginViewModel.usernameTextWatcher}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/password"
@@ -49,10 +51,12 @@
             app:addTextChangedListener="@{loginViewModel.passwordTextWatcher}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username" />
+            app:layout_constraintTop_toBottomOf="@+id/username"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/login"
+            style="@style/common_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -63,6 +67,7 @@
             android:enabled="false"
             android:onClick="@{() -> loginViewModel.login()}"
             android:text="@string/action_sign_in"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
