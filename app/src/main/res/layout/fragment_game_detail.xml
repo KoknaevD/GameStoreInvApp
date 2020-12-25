@@ -16,8 +16,10 @@
         <Button
             android:id="@+id/save_button"
             style="@style/common_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/save_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -28,8 +30,9 @@
         <Button
             android:id="@+id/cancel_button"
             style="@style/common_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@android:color/holo_orange_light"
             android:text="@string/cancel_button_text"
