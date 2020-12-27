@@ -1,15 +1,22 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-<!--for interact the animations with FAB (scrolling)-->
+    <!--for interact the animations with FAB (scrolling)-->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/game_recycler"
+        <!--        for scrolling in linear layout-->
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical" />
+            android:layout_height="match_parent">
 
+            <!--    The best layout for only vertical elements-->
+            <LinearLayout
+                android:id="@+id/game_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:scrollbars="vertical" />
+        </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
@@ -19,7 +26,6 @@
             android:layout_margin="@dimen/fragment_margin"
             android:contentDescription="@string/fab_description"
             android:src="@drawable/ic_add" />
-
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

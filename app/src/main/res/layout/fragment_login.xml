@@ -30,13 +30,13 @@
             android:layout_marginTop="@dimen/login_max_margin"
             android:layout_marginEnd="@dimen/login_margin"
             android:hint="@string/prompt_email"
+            android:importantForAutofill="no"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
             app:addTextChangedListener="@{loginViewModel.usernameTextWatcher}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/password"
@@ -48,13 +48,13 @@
             android:hint="@string/prompt_password"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionDone"
+            android:importantForAutofill="no"
             android:inputType="textPassword"
             android:selectAllOnFocus="true"
             app:addTextChangedListener="@{loginViewModel.passwordTextWatcher}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@+id/username" />
 
         <Button
             android:id="@+id/login"

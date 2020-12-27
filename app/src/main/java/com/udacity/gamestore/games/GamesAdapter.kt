@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.udacity.gamestore.R
-import com.udacity.gamestore.databinding.RecyclerviewGameBinding
+import com.udacity.gamestore.databinding.CardGameBinding
 
 
 class GamesAdapter(
@@ -17,22 +17,22 @@ class GamesAdapter(
         return games.size
     }
 
-    inner class GamesViewHolder(val recyclerviewGameBinding: RecyclerviewGameBinding) :
-        RecyclerView.ViewHolder(recyclerviewGameBinding.root) {
+    inner class GamesViewHolder(val cardGameBinding: CardGameBinding) :
+        RecyclerView.ViewHolder(cardGameBinding.root) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         GamesViewHolder(
-            DataBindingUtil.inflate<RecyclerviewGameBinding>(
+            DataBindingUtil.inflate<CardGameBinding>(
                 LayoutInflater.from(parent.context),
-                R.layout.recyclerview_game,
+                R.layout.card_game,
                 parent,
                 false
             )
         )
 
     override fun onBindViewHolder(holder: GamesViewHolder, position: Int) {
-        holder.recyclerviewGameBinding.game = games[position]
+        holder.cardGameBinding.game = games[position]
     }
 
 }

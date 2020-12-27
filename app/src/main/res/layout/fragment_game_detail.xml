@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="game"
             type="com.udacity.gamestore.games.Game" />
     </data>
 
-<!--    The best layout for elements arranged both vertically and horizontally-->
-<!--    With other layers there would be a lot of nesting-->
+    <!--    The best layout for elements arranged both vertically and horizontally-->
+    <!--    With other layers there would be a lot of nesting-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -127,12 +128,12 @@
             android:layout_marginEnd="@dimen/fragment_margin"
             android:ems="@integer/normal_ems"
             android:hint="@string/description_edit_hint"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:text="@={game.description}"
             app:layout_constraintBaseline_toBaselineOf="@+id/description_textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/description_textView"
-            android:importantForAutofill="no" />
+            app:layout_constraintStart_toEndOf="@+id/description_textView" />
 
         <EditText
             android:id="@+id/price_editText"
@@ -142,13 +143,13 @@
             android:layout_marginEnd="@dimen/fragment_margin"
             android:ems="@integer/normal_ems"
             android:hint="@string/price_edit_hint"
+            android:importantForAutofill="no"
             android:inputType="numberDecimal"
             android:text="@={``+game.price}"
             app:layout_constraintBaseline_toBaselineOf="@+id/price_textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/price_textView"
-            android:importantForAutofill="no" />
+            app:layout_constraintStart_toEndOf="@+id/price_textView" />
 
-<!--        android:text="@={Double.toString(viewModel.newGame.price)}"   //dont work, cant be inverted-->
+        <!--        android:text="@={Double.toString(viewModel.newGame.price)}"   //dont work, cant be inverted-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
