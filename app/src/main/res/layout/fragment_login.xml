@@ -10,6 +10,8 @@
             type="com.udacity.gamestore.login.LoginViewModel" />
     </data>
 
+    <!--    The best layout for elements arranged both vertically and horizontally-->
+    <!--    With other layers there would be a lot of nesting-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
