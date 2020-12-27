@@ -15,5 +15,8 @@
     <dimen name="login_max_margin">96dp</dimen>
     <dimen name="login_button_margin">48dp</dimen>
     <dimen name="login_button_text">18sp</dimen>
+    <dimen name="card_height">180dp</dimen>
+    <dimen name="card_elev">2dp</dimen>
+    <dimen name="card_corner">4dp</dimen>
 
 </resources>

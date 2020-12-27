@@ -16,11 +16,11 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="@dimen/card_height"
         android:layout_margin="@dimen/margin_half"
         card_view:cardBackgroundColor="@color/design_default_color_background"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="2dp">
+        card_view:cardCornerRadius="@dimen/card_corner"
+        card_view:cardElevation="@dimen/card_elev">
 
 
         <!--    The best layout for elements arranged both vertically and horizontally-->
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_half"
                 android:layout_marginEnd="@dimen/margin_half"
-                android:lines="2"
+                android:lines="@integer/two_line"
                 android:text="@{game.name}"
                 android:textAlignment="textStart"
                 card_view:layout_constraintBottom_toTopOf="@+id/company_text"
@@ -71,8 +71,8 @@
                 android:layout_marginStart="@dimen/margin_half"
                 android:layout_marginEnd="@dimen/margin_half"
                 android:fontFamily="@font/roboto"
-                android:lines="1"
-                android:maxLines="1"
+                android:lines="@integer/one_line"
+                android:maxLines="@integer/one_line"
                 android:text="@{game.company}"
                 card_view:layout_constraintBottom_toTopOf="@+id/description_text"
                 card_view:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +88,7 @@
                 android:layout_marginStart="@dimen/margin_half"
                 android:layout_marginEnd="@dimen/margin_half"
                 android:fontFamily="@font/roboto"
-                android:lines="2"
+                android:lines="@integer/two_line"
                 android:text="@{game.description}"
                 card_view:layout_constraintBottom_toTopOf="@+id/price_text"
                 card_view:layout_constraintEnd_toEndOf="parent"
