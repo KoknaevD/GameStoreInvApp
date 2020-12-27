@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="com.udacity.gamestore.games.GamesViewModel" />
+            name="game"
+            type="com.udacity.gamestore.games.Game" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,11 +16,11 @@
         <Button
             android:id="@+id/save_button"
             style="@style/common_button"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/no_margin"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginEnd="@dimen/fragment_margin"
+            android:layout_marginBottom="@dimen/fragment_margin"
             android:text="@string/save_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,10 +30,10 @@
         <Button
             android:id="@+id/cancel_button"
             style="@style/common_button"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/no_margin"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginBottom="@dimen/fragment_margin"
             android:backgroundTint="@android:color/holo_orange_light"
             android:text="@string/cancel_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,10 +44,10 @@
         <TextView
             android:id="@+id/name_textView"
             style="@style/detail_text"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/no_margin"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginTop="@dimen/double_margin"
             android:text="@string/name_text"
             app:layout_constraintEnd_toEndOf="@+id/description_textView"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,15 +55,15 @@
 
         <EditText
             android:id="@+id/name_editText"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/no_margin"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginEnd="@dimen/fragment_margin"
             android:autofillHints=""
-            android:ems="10"
+            android:ems="@integer/normal_ems"
             android:hint="@string/name_edit_hind"
             android:inputType="textPersonName"
-            android:text="@={viewModel.newGame.name}"
+            android:text="@={game.name}"
             app:layout_constraintBaseline_toBaselineOf="@+id/name_textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/name_textView" />
@@ -71,12 +71,11 @@
         <TextView
             android:id="@+id/company_textView"
             style="@style/detail_text"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/no_margin"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginTop="@dimen/double_margin"
             android:text="@string/company_text"
-            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/description_textView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name_textView" />
@@ -84,12 +83,11 @@
         <TextView
             android:id="@+id/price_textView"
             style="@style/detail_text"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/no_margin"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginTop="@dimen/double_margin"
             android:text="@string/price_text"
-            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/description_textView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/company_textView" />
@@ -99,38 +97,37 @@
             style="@style/detail_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginTop="@dimen/double_margin"
             android:text="@string/description_text"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/price_textView" />
 
         <EditText
             android:id="@+id/company_editText"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/no_margin"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginEnd="@dimen/fragment_margin"
+            android:ems="@integer/normal_ems"
             android:hint="@string/company_edit_hint"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:text="@={viewModel.newGame.company}"
+            android:text="@={game.company}"
             app:layout_constraintBaseline_toBaselineOf="@+id/company_textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/company_textView"
-            android:importantForAutofill="no" />
+            app:layout_constraintStart_toEndOf="@+id/company_textView" />
 
         <EditText
             android:id="@+id/description_editText"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/no_margin"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginEnd="@dimen/fragment_margin"
+            android:ems="@integer/normal_ems"
             android:hint="@string/description_edit_hint"
             android:inputType="textPersonName"
-            android:text="@={viewModel.newGame.description}"
+            android:text="@={game.description}"
             app:layout_constraintBaseline_toBaselineOf="@+id/description_textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/description_textView"
@@ -138,18 +135,19 @@
 
         <EditText
             android:id="@+id/price_editText"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/no_margin"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
+            android:layout_marginStart="@dimen/fragment_margin"
+            android:layout_marginEnd="@dimen/fragment_margin"
+            android:ems="@integer/normal_ems"
             android:hint="@string/price_edit_hint"
             android:inputType="numberDecimal"
-            android:text="@={``+viewModel.newGame.price}"
+            android:text="@={``+game.price}"
             app:layout_constraintBaseline_toBaselineOf="@+id/price_textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/price_textView"
             android:importantForAutofill="no" />
 
+<!--        android:text="@={Double.toString(viewModel.newGame.price)}"   //dont work, cant be inverted-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

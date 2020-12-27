@@ -25,20 +25,21 @@ class GameDetailFragment : Fragment() {
             R.layout.fragment_game_detail, container, false
         )
 
+        val newGame = Game("", 0.00, "", "", mutableListOf(R.drawable.image_available_soon))
+
         val viewModel: GamesViewModel by activityViewModels()
         binding.saveButton.setOnClickListener {
-            if (viewModel.isNewGameValid()) {
-                viewModel.addNewGame()
+            if (viewModel.isNewGameValid(newGame)) {
+                viewModel.addNewGame(newGame)
                 this.findNavController().popBackStack()
             }
         }
 
         binding.cancelButton.setOnClickListener {
-            viewModel.clearDetail()
             this.findNavController().popBackStack()
         }
 
-        binding.viewModel = viewModel
+        binding.game = newGame
 
         return binding.root
     }

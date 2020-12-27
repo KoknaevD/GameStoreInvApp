@@ -12,16 +12,7 @@ class GamesViewModel : ViewModel() {
     val games: LiveData<MutableList<Game>>
         get() = _games
 
-
-    lateinit var newGame: Game //i dont know how to do it without an open field with two way binding
-
-    private fun resetNewGame() {
-        newGame = Game("", 0.00, "", "", mutableListOf(R.drawable.image_available_soon))
-    }
-
     init {
-        Log.i("test", "GamesViewModel created")
-        resetNewGame()
         _games.value = mutableListOf(
             Game(
                 "Diablo",
@@ -83,18 +74,11 @@ class GamesViewModel : ViewModel() {
         )
     }
 
-    fun addNewGame() {
+    fun addNewGame(newGame: Game) {
         _games.value?.add(newGame)
-        resetNewGame()
     }
 
-
-    fun clearDetail() {
-        resetNewGame()
-    }
-
-
-    fun isNewGameValid(): Boolean {
+    fun isNewGameValid(newGame: Game): Boolean {
         return !(newGame.name.isEmpty() || newGame.company.isEmpty() || newGame.description.isEmpty() || newGame.price == 0.00)
     }
 }
